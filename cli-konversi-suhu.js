@@ -3,14 +3,15 @@ let suhuAwal = 1
 let suhuAkhir = 2
 let tempAkhir = 0
 
+// i untuk handle loop process.stdin.on()
+let i = 1
+
 console.log("Pilih suhu awal: ")
 console.log("1. Celcius")
 console.log("2. Fahrenheit")
 console.log("3. Reamur")
 console.log("4. Kelvin")
 console.log("Input angka 1 sampai 4:")
-
-let i = 1
 
 process.stdin.on('data', data => {
     input = data.toString().trim()
@@ -19,8 +20,6 @@ process.stdin.on('data', data => {
     // console.log(typeof input)
     // console.log(input)
 
-    // i untuk loop process.stdin.on()
-    
     if (i === 1) {
         suhuAwal = input
         if (isNaN(suhuAwal)) {
@@ -58,6 +57,7 @@ process.stdin.on('data', data => {
             console.log("Masukkan suhu akhir:")
 
         }
+
     } else if (i === 2){
         suhuAkhir = input
         // console.log(`suhu akhir adalah ${suhuAkhir}`)
@@ -66,6 +66,8 @@ process.stdin.on('data', data => {
             console.log("Input yang Anda masukkan bukan angka. Masukkan suhu akhir:")
         } else if (suhuAkhir < 1 || suhuAkhir > 4) {
             console.log("Angka yang Anda masukkan tidak sesuai. Masukkan suhu akhir:")
+        } else if (suhuAkhir === suhuAwal) {
+            console.log("Suhu akhir tidak boleh sama dengan suhu awal. Masukkan suhu akhir:")
         } else {
             switch (suhuAkhir) {
                 case 1: {
@@ -93,6 +95,8 @@ process.stdin.on('data', data => {
         tempAwal = input
         // console.log(`temperatur awal adalah: ${tempAwal}`)
 
+
+        // x untuk handle loop input dari process.stdin.on()
         let x = 1
         if (x === 1) {
             if (isNaN(tempAwal)) {
