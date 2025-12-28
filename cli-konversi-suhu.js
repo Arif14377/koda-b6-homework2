@@ -95,11 +95,7 @@ process.stdin.on('data', data => {
         tempAwal = input
         // console.log(`temperatur awal adalah: ${tempAwal}`)
 
-
-        // x untuk handle loop input dari process.stdin.on()
-        let x = 1
-        if (x === 1) {
-            if (isNaN(tempAwal)) {
+        if (isNaN(tempAwal)) {
                 console.log("Temperatur yang Anda input bukan angka. Masukkan temperatur suhu:")
             } else {
                 switch(suhuAwal) {
@@ -174,11 +170,7 @@ process.stdin.on('data', data => {
                         }
                 }
                 process.exit()
-            }
-        } else {
-            process.exit()
-        }
-        
+            }        
     }
 
     
